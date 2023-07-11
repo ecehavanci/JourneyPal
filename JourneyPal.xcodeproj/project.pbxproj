@@ -16,6 +16,8 @@
 		962E853A2A5C140300544EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962E85392A5C140300544EE0 /* Main.storyboard */; };
 		962E853C2A5C283A00544EE0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E853B2A5C283A00544EE0 /* HomeVC.swift */; };
 		962E853E2A5C285800544EE0 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E853D2A5C285800544EE0 /* RegisterVC.swift */; };
+		965138A32A5DA2D100133F8D /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965138A22A5DA2D100133F8D /* CountryCodes.swift */; };
+		965138A62A5DABC500133F8D /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 965138A52A5DABC500133F8D /* PhoneNumberKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		962E85392A5C140300544EE0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		962E853B2A5C283A00544EE0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		962E853D2A5C285800544EE0 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		965138A22A5DA2D100133F8D /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965138A62A5DABC500133F8D /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +76,7 @@
 				962E85352A5BF91500544EE0 /* LoginVC.swift */,
 				962E853B2A5C283A00544EE0 /* HomeVC.swift */,
 				962E853D2A5C285800544EE0 /* RegisterVC.swift */,
+				965138A22A5DA2D100133F8D /* CountryCodes.swift */,
 			);
 			path = JourneyPal;
 			sourceTree = "<group>";
@@ -92,6 +97,9 @@
 			dependencies = (
 			);
 			name = JourneyPal;
+			packageProductDependencies = (
+				965138A52A5DABC500133F8D /* PhoneNumberKit */,
+			);
 			productName = JourneyPal;
 			productReference = 962E851E2A5BF84300544EE0 /* JourneyPal.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 962E85152A5BF84300544EE0;
+			packageReferences = (
+				965138A42A5DABC500133F8D /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+			);
 			productRefGroup = 962E851F2A5BF84300544EE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,6 +163,7 @@
 				962E85222A5BF84400544EE0 /* AppDelegate.swift in Sources */,
 				962E853E2A5C285800544EE0 /* RegisterVC.swift in Sources */,
 				962E85362A5BF91500544EE0 /* LoginVC.swift in Sources */,
+				965138A32A5DA2D100133F8D /* CountryCodes.swift in Sources */,
 				962E85242A5BF84400544EE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		965138A42A5DABC500133F8D /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		965138A52A5DABC500133F8D /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 965138A42A5DABC500133F8D /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 962E85162A5BF84300544EE0 /* Project object */;
 }

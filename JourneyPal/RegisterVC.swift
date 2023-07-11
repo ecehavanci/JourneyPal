@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
 class RegisterVC: UIViewController {
-
+    let phoneNumberKit = PhoneNumberKit()
+    
+    @IBOutlet var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //doIt()
         // Do any additional setup after loading the view.
     }
+
+    func doIt(){
+        //passwordTextField.
+        do {
+            let phoneNumber = try phoneNumberKit.parse(passwordTextField.text!)
+            let phoneNumberCustomDefaultRegion = try phoneNumberKit.parse(passwordTextField.text!, withRegion: "TR", ignoreType: true)
+        }
+        catch {
+            print("Generic parser error")
+        }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
