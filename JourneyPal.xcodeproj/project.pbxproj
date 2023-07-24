@@ -16,6 +16,11 @@
 		962E853A2A5C140300544EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962E85392A5C140300544EE0 /* Main.storyboard */; };
 		962E853C2A5C283A00544EE0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E853B2A5C283A00544EE0 /* HomeVC.swift */; };
 		962E853E2A5C285800544EE0 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E853D2A5C285800544EE0 /* RegisterVC.swift */; };
+		963DDF112A6D5C7000D1C697 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963DDF102A6D5C7000D1C697 /* GoogleService-Info.plist */; };
+		963DDF142A6D5E9F00D1C697 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 963DDF132A6D5E9F00D1C697 /* FirebaseAuth */; };
+		963DDF162A6D5E9F00D1C697 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 963DDF152A6D5E9F00D1C697 /* FirebaseFirestore */; };
+		963DDF182A6D5E9F00D1C697 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 963DDF172A6D5E9F00D1C697 /* FirebaseFirestoreSwift */; };
+		963DDF1A2A6D5E9F00D1C697 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 963DDF192A6D5E9F00D1C697 /* FirebaseStorage */; };
 		965138A32A5DA2D100133F8D /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965138A22A5DA2D100133F8D /* CountryCodes.swift */; };
 		965138A62A5DABC500133F8D /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 965138A52A5DABC500133F8D /* PhoneNumberKit */; };
 /* End PBXBuildFile section */
@@ -32,6 +37,7 @@
 		962E85392A5C140300544EE0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		962E853B2A5C283A00544EE0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		962E853D2A5C285800544EE0 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		963DDF102A6D5C7000D1C697 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		965138A22A5DA2D100133F8D /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +47,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				965138A62A5DABC500133F8D /* PhoneNumberKit in Frameworks */,
+				963DDF142A6D5E9F00D1C697 /* FirebaseAuth in Frameworks */,
+				963DDF162A6D5E9F00D1C697 /* FirebaseFirestore in Frameworks */,
+				963DDF1A2A6D5E9F00D1C697 /* FirebaseStorage in Frameworks */,
+				963DDF182A6D5E9F00D1C697 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +76,7 @@
 		962E85202A5BF84300544EE0 /* JourneyPal */ = {
 			isa = PBXGroup;
 			children = (
+				963DDF102A6D5C7000D1C697 /* GoogleService-Info.plist */,
 				962E85212A5BF84400544EE0 /* AppDelegate.swift */,
 				962E85232A5BF84400544EE0 /* SceneDelegate.swift */,
 				962E85252A5BF84400544EE0 /* ViewController.swift */,
@@ -73,12 +84,20 @@
 				962E852C2A5BF84400544EE0 /* LaunchScreen.storyboard */,
 				962E852F2A5BF84400544EE0 /* Info.plist */,
 				962E85392A5C140300544EE0 /* Main.storyboard */,
-				962E85352A5BF91500544EE0 /* LoginVC.swift */,
-				962E853B2A5C283A00544EE0 /* HomeVC.swift */,
-				962E853D2A5C285800544EE0 /* RegisterVC.swift */,
+				965138A82A5DB62400133F8D /* New Group */,
 				965138A22A5DA2D100133F8D /* CountryCodes.swift */,
 			);
 			path = JourneyPal;
+			sourceTree = "<group>";
+		};
+		965138A82A5DB62400133F8D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				962E85352A5BF91500544EE0 /* LoginVC.swift */,
+				962E853B2A5C283A00544EE0 /* HomeVC.swift */,
+				962E853D2A5C285800544EE0 /* RegisterVC.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +118,10 @@
 			name = JourneyPal;
 			packageProductDependencies = (
 				965138A52A5DABC500133F8D /* PhoneNumberKit */,
+				963DDF132A6D5E9F00D1C697 /* FirebaseAuth */,
+				963DDF152A6D5E9F00D1C697 /* FirebaseFirestore */,
+				963DDF172A6D5E9F00D1C697 /* FirebaseFirestoreSwift */,
+				963DDF192A6D5E9F00D1C697 /* FirebaseStorage */,
 			);
 			productName = JourneyPal;
 			productReference = 962E851E2A5BF84300544EE0 /* JourneyPal.app */;
@@ -130,6 +153,7 @@
 			mainGroup = 962E85152A5BF84300544EE0;
 			packageReferences = (
 				965138A42A5DABC500133F8D /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				963DDF122A6D5E9F00D1C697 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 962E851F2A5BF84300544EE0 /* Products */;
 			projectDirPath = "";
@@ -146,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				962E853A2A5C140300544EE0 /* Main.storyboard in Resources */,
+				963DDF112A6D5C7000D1C697 /* GoogleService-Info.plist in Resources */,
 				962E852E2A5BF84400544EE0 /* LaunchScreen.storyboard in Resources */,
 				962E852B2A5BF84400544EE0 /* Assets.xcassets in Resources */,
 			);
@@ -374,6 +399,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		963DDF122A6D5E9F00D1C697 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		965138A42A5DABC500133F8D /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
@@ -385,6 +418,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		963DDF132A6D5E9F00D1C697 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 963DDF122A6D5E9F00D1C697 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		963DDF152A6D5E9F00D1C697 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 963DDF122A6D5E9F00D1C697 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		963DDF172A6D5E9F00D1C697 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 963DDF122A6D5E9F00D1C697 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		963DDF192A6D5E9F00D1C697 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 963DDF122A6D5E9F00D1C697 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		965138A52A5DABC500133F8D /* PhoneNumberKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 965138A42A5DABC500133F8D /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;

@@ -6,12 +6,29 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
 
 class LoginVC: UIViewController {
-    @IBOutlet var usernameTextField: UITextField!
+    var handle: AuthStateDidChangeListenerHandle?
     
     @IBOutlet var passwordTextField: UITextField!
    
+    @IBOutlet var usernameTextField: UITextField!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+          // ...
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +41,12 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func SignIn(_ sender: UIButton) {
+        Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+          // ...
+        }
+        
+        print("signed in");
         
     }
     
@@ -32,6 +55,8 @@ class LoginVC: UIViewController {
         let password = passwordTextField.text
         print(password!)
         print(username!)
+        
+        
 
     }
     
