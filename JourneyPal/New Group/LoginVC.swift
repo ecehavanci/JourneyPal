@@ -55,8 +55,6 @@ class LoginVC: UIViewController {
         let password = passwordTextField.text
         print(password!)
         print(username!)
-        
-        
 
     }
     
