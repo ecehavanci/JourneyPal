@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
    
     @IBOutlet var usernameTextField: UITextField!
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -37,18 +37,37 @@ class LoginVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         usernameTextField.becomeFirstResponder()
-        passwordTextField.becomeFirstResponder()
     }
     
-    @IBAction func SignIn(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-          // ...
+    
+    @IBAction func signInTap(_ sender: UIButton) {
+        if let email = usernameTextField.text, let pass = passwordTextField.text{
+            Auth.auth().signIn(withEmail: email, password: pass) { [weak self] authResult, error in
+              guard let strongSelf = self else { return }
+                if let maybeError = error{
+                    let err = maybeError as NSError;
+                    switch err.code{
+                    case AuthErrorCode.invalidEmail.rawValue:
+                        Alert().showSimpleAlert(controller: self!,message: "Invalid email",title: "Please write your email again")
+                        break;
+                        
+                    default:
+                        Alert().showSimpleAlert(controller: self!,message: "Can not sign in",title: "Please check your information.");
+                    }
+                    
+                }
+                else{
+                    if let _ = authResult?.user{
+                        let homeVC = HomeVC()
+                        self!.performSegue(withIdentifier: "goHome", sender: nil)
+                    }
+                }
+                
+            }
         }
         
-        print("signed in");
-        
     }
+    
     
     @IBAction func createNewAccount(_ sender: UIButton) {
         let username = usernameTextField.text
@@ -57,16 +76,5 @@ class LoginVC: UIViewController {
         print(username!)
 
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
